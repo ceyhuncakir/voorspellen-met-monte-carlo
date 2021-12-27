@@ -2,7 +2,7 @@ import numpy as np
 import time
 
 class Mersenne:
-    def __init__(self, seed: int = 5489):
+    def __init__(self):
         """
         initialiator voor de mersenne twister
 
@@ -10,7 +10,7 @@ class Mersenne:
             start waarde voor de algoritme
         """
 
-        self.seed = seed
+        self.seed = 9343
         self.w = 32
         self.r = 31
         self.n = 624
@@ -24,7 +24,7 @@ class Mersenne:
         self.c = 0xefc60000
         self.f = 0x6c078965
         self.compress_mask = 0xffffffff
-        self.Z = [seed]
+        self.Z = [self.seed]
         self.random_numbers = None
 
         self.upmask = int('10000000000000000000000000000000', 2)
